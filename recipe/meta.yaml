@@ -38,6 +38,7 @@ test:
 about:
   home: https://CRAN.R-project.org/package=diagram
   license: GPL (>= 2)
+  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
   summary: Visualises simple graphs (networks) based on a transition matrix, utilities to plot
     flow diagrams,  visualising webs, electrical networks, etc. Support for the book
     "A practical guide to ecological modelling - using R as a simulation platform" by
@@ -49,8 +50,3 @@ about:
 extra:
   recipe-maintainers:
     - conda-forge/r
-    - dpryan79
-    - johanneskoester
-    - bgruening
-    - daler
-    - jdblischak
