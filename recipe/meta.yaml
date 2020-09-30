@@ -1,5 +1,4 @@
 {% set version = "1.6.5" %}
-
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -8,7 +7,6 @@ package:
   version: {{ version|replace("-", "_") }}
 
 source:
-  fn: diagram_{{ version }}.tar.gz
   url:
     - https://cran.r-project.org/src/contrib/diagram_{{ version }}.tar.gz
     - https://cran.r-project.org/src/contrib/Archive/diagram/diagram_{{ version }}.tar.gz
@@ -17,15 +15,14 @@ source:
 build:
   noarch: generic
   number: 0
-
   rpaths:
     - lib/R/lib/
     - lib/
+
 requirements:
   build:
     - r-base
     - r-shape
-
   run:
     - r-base
     - r-shape
@@ -37,11 +34,12 @@ test:
 
 about:
   home: https://CRAN.R-project.org/package=diagram
-  license: GPL (>= 2)
-  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
+  license: GPL-2.0-or-later
   summary: Visualises simple graphs (networks) based on a transition matrix, utilities to plot flow diagrams,  visualising webs, electrical networks, etc. Support for the book "A practical guide to ecological modelling - using R as a simulation platform" by Karline Soetaert and Peter M.J. Herman (2009), Springer. and the
     book "Solving Differential Equations in R" by Karline Soetaert, Jeff Cash and Francesca Mazzia (2012), Springer. Includes demo(flowchart), demo(plotmat), demo(plotweb).
   license_family: GPL3
+  license_file:
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
 
 extra:
   recipe-maintainers:
