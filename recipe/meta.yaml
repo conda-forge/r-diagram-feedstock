@@ -1,4 +1,4 @@
-{% set version = '1.6.4' %}
+{% set version = "1.6.5" %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -12,11 +12,11 @@ source:
   url:
     - https://cran.r-project.org/src/contrib/diagram_{{ version }}.tar.gz
     - https://cran.r-project.org/src/contrib/Archive/diagram/diagram_{{ version }}.tar.gz
-  sha256: 7c2bc5d5d634c3b8ca7fea79fb463e412962d88f47a77a74c811cc62f375ce38
+  sha256: e9c03e7712e0282c5d9f2b760bafe2aac9e99a9723578d9e6369d60301f574e4
 
 build:
   noarch: generic
-  number: 1003
+  number: 0
 
   rpaths:
     - lib/R/lib/
@@ -38,13 +38,9 @@ test:
 about:
   home: https://CRAN.R-project.org/package=diagram
   license: GPL (>= 2)
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
-  summary: Visualises simple graphs (networks) based on a transition matrix, utilities to plot
-    flow diagrams,  visualising webs, electrical networks, etc. Support for the book
-    "A practical guide to ecological modelling - using R as a simulation platform" by
-    Karline Soetaert and Peter M.J. Herman (2009), Springer. and the book "Solving Differential
-    Equations in R" by Karline Soetaert, Jeff Cash and Francesca Mazzia (2012), Springer.
-    Includes demo(flowchart), demo(plotmat), demo(plotweb).
+  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
+  summary: Visualises simple graphs (networks) based on a transition matrix, utilities to plot flow diagrams,  visualising webs, electrical networks, etc. Support for the book "A practical guide to ecological modelling - using R as a simulation platform" by Karline Soetaert and Peter M.J. Herman (2009), Springer. and the
+    book "Solving Differential Equations in R" by Karline Soetaert, Jeff Cash and Francesca Mazzia (2012), Springer. Includes demo(flowchart), demo(plotmat), demo(plotweb).
   license_family: GPL3
 
 extra:
