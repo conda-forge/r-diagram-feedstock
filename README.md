@@ -5,7 +5,7 @@ Home: https://CRAN.R-project.org/package=diagram
 
 Package license: GPL-2.0-or-later
 
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-diagram-feedstock/blob/master/LICENSE.txt)
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-diagram-feedstock/blob/main/LICENSE.txt)
 
 Summary: Visualises simple graphs (networks) based on a transition matrix, utilities to plot flow diagrams,  visualising webs, electrical networks, etc. Support for the book "A practical guide to ecological modelling - using R as a simulation platform" by Karline Soetaert and Peter M.J. Herman (2009), Springer. and the book "Solving Differential Equations in R" by Karline Soetaert, Jeff Cash and Francesca Mazzia (2012), Springer. Includes demo(flowchart), demo(plotmat), demo(plotweb).
 
@@ -15,8 +15,8 @@ Current build status
 
 <table><tr><td>All platforms:</td>
     <td>
-      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=1078&branchName=master">
-        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-diagram-feedstock?branchName=master">
+      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=1078&branchName=main">
+        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-diagram-feedstock?branchName=main">
       </a>
     </td>
   </tr>
@@ -39,23 +39,49 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `r-diagram` can be installed with:
+Once the `conda-forge` channel has been enabled, `r-diagram` can be installed with `conda`:
 
 ```
 conda install r-diagram
 ```
 
-It is possible to list all of the versions of `r-diagram` available on your platform with:
+or with `mamba`:
+
+```
+mamba install r-diagram
+```
+
+It is possible to list all of the versions of `r-diagram` available on your platform with `conda`:
 
 ```
 conda search r-diagram --channel conda-forge
+```
+
+or with `mamba`:
+
+```
+mamba search r-diagram --channel conda-forge
+```
+
+Alternatively, `mamba repoquery` may provide more information:
+
+```
+# Search all versions available on your platform:
+mamba repoquery search r-diagram --channel conda-forge
+
+# List packages depending on `r-diagram`:
+mamba repoquery whoneeds r-diagram --channel conda-forge
+
+# List dependencies of `r-diagram`:
+mamba repoquery depends r-diagram --channel conda-forge
 ```
 
 
 About conda-forge
 =================
 
-[![Powered by NumFOCUS](https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&colorA=E1523D&colorB=007D8A)](http://numfocus.org)
+[![Powered by
+NumFOCUS](https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&colorA=E1523D&colorB=007D8A)](https://numfocus.org)
 
 conda-forge is a community-led conda channel of installable packages.
 In order to provide high-quality builds, the process has been automated into the
@@ -65,10 +91,12 @@ for each of the installable packages. Such a repository is known as a *feedstock
 A feedstock is made up of a conda recipe (the instructions on what and how to build
 the package) and the necessary configurations for automatic building using freely
 available continuous integration services. Thanks to the awesome service provided by
-[CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/)
-and [TravisCI](https://travis-ci.com/) it is possible to build and upload installable
-packages to the [conda-forge](https://anaconda.org/conda-forge)
-[Anaconda-Cloud](https://anaconda.org/) channel for Linux, Windows and OSX respectively.
+[Azure](https://azure.microsoft.com/en-us/services/devops/), [GitHub](https://github.com/),
+[CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/),
+[Drone](https://cloud.drone.io/welcome), and [TravisCI](https://travis-ci.com/)
+it is possible to build and upload installable packages to the
+[conda-forge](https://anaconda.org/conda-forge) [Anaconda-Cloud](https://anaconda.org/)
+channel for Linux, Windows and OSX respectively.
 
 To manage the continuous integration and simplify feedstock maintenance
 [conda-smithy](https://github.com/conda-forge/conda-smithy) has been developed.
